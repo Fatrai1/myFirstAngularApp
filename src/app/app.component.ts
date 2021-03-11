@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Hero } from './model/hero';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'myFirstAngularApp';
+  title = 'training app';
+  myHero: Hero = {
+    name: "Magneto",
+    address: "New York",
+    superpower: "megnetic"
+  };
+
+  listObservable: Observable<any>;
+
+  constructor() {
+    this.listObservable = new Observable( observer => {
+      
+    })
+  }
 }
