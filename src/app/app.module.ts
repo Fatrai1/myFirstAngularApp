@@ -8,6 +8,7 @@ import { PrefixPipe } from './pipe/prefix.pipe';
 import { DelayDirective } from './directive/delay.directive';
 import { HighlightDirective } from './directive/highlight.directive';
 import { FootballService } from './service/football.service';
+import { HeroService } from './service/hero.service';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,10 @@ import { FootballService } from './service/football.service';
     BrowserModule,
     HttpClientModule
   ],
-  providers: [FootballService],
+  providers: [
+    FootballService,
+    HeroService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
