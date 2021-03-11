@@ -19,7 +19,17 @@ export class AppComponent {
 
   constructor() {
     this.listObservable = new Observable( observer => {
-      
-    })
+      let to = setTimeout( () => {
+        observer.next("Megjöttem...");
+      }, 15000);
+      let to2 = setTimeout( () => {
+        observer.complete();
+      }, 20000);
+    });
+    this.listObservable.subscribe(
+      value => console.log(value),
+      error => console.log(error),
+      () => console.log("complete")
+    );
   }
 }
