@@ -1,0 +1,14 @@
+{
+    "heroes": [
+        {
+            "name": "Bombasto",
+            "address": "New York",
+            "superpwer": "bombastic"
+        },
+        {
+            "name": "Magneto",
+            "address": "New York",
+            "superpwer": "magnetic"
+        }
+    ]
+}

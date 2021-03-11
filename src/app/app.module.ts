@@ -7,6 +7,7 @@ import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { PrefixPipe } from './pipe/prefix.pipe';
 import { DelayDirective } from './directive/delay.directive';
 import { HighlightDirective } from './directive/highlight.directive';
+import { FootballService } from './service/football.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { HighlightDirective } from './directive/highlight.directive';
     BrowserModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [FootballService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
