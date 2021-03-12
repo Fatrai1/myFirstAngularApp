@@ -11,40 +11,42 @@ import { HeroService } from './service/hero.service';
 })
 export class AppComponent {
   title = 'training app';
-  myHero: Hero = {
-    name: "Magneto",
-    address: "New York",
-    superpower: "megnetic"
-  };
+  myHero: Hero | undefined;
 
-  listObservable: Observable<any> | undefined;
+  listObservable: Observable<any>;
 
   constructor(
     private fService: FootballService,
     private hService: HeroService
   ) {
-   this.hService.getAll().forEach( value => {
-     console.log("All hero: ", value);
-   });
 
-   this.hService.getOne(1).forEach( value => {
-     console.log("First Hero ", value);
-   });
+    this.listObservable = hService.getAll();
 
-   this.hService.add({id: 10, name: "Jack", address: "Bp.", superpower: "biking"})
-   .forEach( value => {
-     console.log("Add Hero ", value);
-   });
+  //  this.hService.getAll().forEach( value => {
+  //    console.log("All hero: ", value);
+  //  });
 
-   this.hService.update({id: 1, name: "Lucy", address: "Bp.", superpower: "biking"})
-   .forEach( value => {
-     console.log("Updated Hero ", value);
-   });
+  //  this.hService.getOne(1).forEach( value => {
+  //    console.log("First Hero ", value);
+  //  });
 
-   this.hService.remove(2).forEach( value => {
-     console.log("Deleted Hero ", value);
-   });
+  //  this.hService.add({id: 10, name: "Jack", address: "Bp.", superpower: "biking"})
+  //  .forEach( value => {
+  //    console.log("Add Hero ", value);
+  //  });
+
+  //  this.hService.update({id: 1, name: "Lucy", address: "Bp.", superpower: "biking"})
+  //  .forEach( value => {
+  //    console.log("Updated Hero ", value);
+  //  });
+
+  //  this.hService.remove(2).forEach( value => {
+  //    console.log("Deleted Hero ", value);
+  //  });
 
 
+  }
+  setHero(hero: Hero): void {
+    this.myHero = hero;
   }
 }

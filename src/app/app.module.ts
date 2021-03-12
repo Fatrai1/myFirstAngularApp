@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
@@ -9,6 +10,24 @@ import { DelayDirective } from './directive/delay.directive';
 import { HighlightDirective } from './directive/highlight.directive';
 import { FootballService } from './service/football.service';
 import { HeroService } from './service/hero.service';
+import { HomeComponent } from './home/home.component';
+import { HeroComponent } from './hero/hero.component';
+import { NavComponent } from './nav/nav.component';
+
+const appRoutes: Routes = [
+  {
+    path: "",
+    component: HomeComponent
+  },
+  {
+    path: "hero",
+    component: HeroComponent
+  },
+  {
+    path: "**",
+    component: HomeComponent
+  }
+];
 
 @NgModule({
   declarations: [
@@ -16,11 +35,15 @@ import { HeroService } from './service/hero.service';
     HeroDetailComponent,
     PrefixPipe,
     DelayDirective,
-    HighlightDirective
+    HighlightDirective,
+    HomeComponent,
+    HeroComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [
     FootballService,
