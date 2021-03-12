@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Hero } from './model/hero';
 import { FootballService } from './service/football.service';
+import { HeroService } from './service/hero.service';
 
 @Component({
   selector: 'app-root',
@@ -16,23 +17,34 @@ export class AppComponent {
     superpower: "megnetic"
   };
 
-  listObservable: Observable<any>;
+  listObservable: Observable<any> | undefined;
 
   constructor(
-    private fService: FootballService
+    private fService: FootballService,
+    private hService: HeroService
   ) {
-    this.listObservable = new Observable( observer => {
-      let to = setTimeout( () => {
-        observer.next("Megjöttem...");
-      }, 15000);
-      let to2 = setTimeout( () => {
-        observer.complete();
-      }, 20000);
-    });
-    this.listObservable.subscribe(
-      value => console.log(value),
-      error => console.log(error),
-      () => console.log("complete")
-    );
+   this.hService.getAll().forEach( value => {
+     console.log("All hero: ", value);
+   });
+
+   this.hService.getOne(1).forEach( value => {
+     console.log("First Hero ", value);
+   });
+
+   this.hService.add({id: 10, name: "Jack", address: "Bp.", superpower: "biking"})
+   .forEach( value => {
+     console.log("Add Hero ", value);
+   });
+
+   this.hService.update({id: 1, name: "Lucy", address: "Bp.", superpower: "biking"})
+   .forEach( value => {
+     console.log("Updated Hero ", value);
+   });
+
+   this.hService.remove(2).forEach( value => {
+     console.log("Deleted Hero ", value);
+   });
+
+
   }
 }

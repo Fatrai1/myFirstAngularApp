@@ -1,14 +1,16 @@
 {
-    "heroes": [
-        {
-            "name": "Bombasto",
-            "address": "New York",
-            "superpwer": "bombastic"
-        },
-        {
-            "name": "Magneto",
-            "address": "Los Angeles",
-            "superpwer": "magnetic"
-        }
-    ]
+  "heroes": [
+    {
+      "id": 1,
+      "name": "Lucy",
+      "address": "Bp.",
+      "superpower": "biking"
+    },
+    {
+      "id": 10,
+      "name": "Jack",
+      "address": "Bp.",
+      "superpower": "biking"
+    }
+  ]
 }
