@@ -2,9 +2,9 @@
   "heroes": [
     {
       "id": 1,
-      "name": "Lucy",
-      "address": "Bp.",
-      "superpower": "biking"
+      "name": "Laci",
+      "address": "London 42.utca",
+      "superpower": "really smart"
     },
     {
       "id": 10,
