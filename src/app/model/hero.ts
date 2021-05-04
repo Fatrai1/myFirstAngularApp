@@ -4,12 +4,13 @@ export class Hero {
     address: string = '';
     superpower: string = '';
 
-    // constructor(properties?: Hero){
-    //     if(properties){
-    //         this.id=properties.id || 0;
-    //         this.name=properties.name || '';
-    //         this.address=properties.address || '';
-    //         this.superpower=properties.superpower || '';
-    //     }
-    // }
-}
+};
+export class superPowers { 
+    static list: string[] = [
+        "magnetic",
+        "really smart",
+        "rich",
+        "hard",
+        "biking"
+  ]
+};
